@@ -47,8 +47,7 @@ const TECH_CATEGORIES = [
 ];
 
 export default function AboutExtended() {
-  const container = useRef<HTMLElement>(null);
-
+  const container = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
       // Reveal Principles

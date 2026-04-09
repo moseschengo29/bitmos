@@ -291,10 +291,10 @@ export function MethodologyStack() {
     const container = useRef<HTMLElement>(null);
   
     useGSAP(() => {
-      const cards = gsap.utils.toArray(".stack-card");
+      const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
       const STACK_HEIGHT = window.innerHeight;
   
-      let tl = gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
           start: "top top",

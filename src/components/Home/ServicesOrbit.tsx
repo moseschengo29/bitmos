@@ -76,7 +76,12 @@ export default function ServicesOrbit() {
              <div className="absolute bottom-[20%] left-[10%] w-1.5 h-1.5 bg-slate-400 rounded-full" />
           </motion.div>
           
-          <motion.div animate={{ rotate: 360 }} transition={{ duration: 90, repeat: Infinity, ease: "linear" }} className="absolute inset-[30%] border-[0.5px] border-slate-100 rounded-full" style={{ borderStyle: "dashed", borderDasharray: "4 12" }} />
+          <motion.div 
+            animate={{ rotate: 360 }} 
+            transition={{ duration: 90, repeat: Infinity, ease: "linear" }} 
+            className="absolute inset-[30%] border-[0.5px] border-slate-100 rounded-full" 
+            style={{ borderStyle: "dashed" }} 
+          />
 
           {/* The Glassmorphic Center Hub */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px]">

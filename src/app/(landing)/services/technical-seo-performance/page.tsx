@@ -184,11 +184,16 @@ export default function TechnicalSEOPage() {
             <div key={i} className="flex items-center gap-4">
               <span className="w-24 text-[10px] font-mono text-slate-500">{bar.label}</span>
               <div className="flex-1 h-2 bg-slate-200/50 rounded-full overflow-hidden">
-                <motion.div 
-                  initial={{ width: 0 }} animate={{ width: bar.w }} 
-                  transition={{ duration: 1, delay: bar.delay, ease: "power3.out" }}
-                  className={`h-full rounded-full ${bar.color}`} 
-                />
+              <motion.div 
+                initial={{ width: 0 }} 
+                animate={{ width: bar.w }} 
+                transition={{ 
+                  duration: 1, 
+                  delay: bar.delay, 
+                  ease: "easeOut" // <-- Changed from "power3.out"
+                }}
+                className={`h-full rounded-full ${bar.color}`} 
+              />
               </div>
             </div>
           ))}
