@@ -1,0 +1,115 @@
+@custom-variant dark (&:is(.dark *));
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --radius: 0.625rem;
+
+  --background: #f8f8f8;        
+  --foreground: #2c2f33;  
+  --card: #ffffff;     
+  --card-foreground: #f3f3f3;     
+  
+  --newcolor: #0E1629;          
+  --newcolor-secondary: #0c1221;
+  --newcolor-accent: #eae0c8;  
+  
+  --newcolor-dim: #eae0c80d;      
+  --newcolor-main: #f1f5f9;     
+  --newcolor-muted: #cbd5e1;    
+  
+  --border: #E2E8F0;            
+  --input: #f4f3f3;            
+  --ring: #94A3B8;              
+}
+
+.dark {  
+  --background: #030b17;        
+  --foreground: #d8d8de;
+  --card: #111d2c;     
+  --card-foreground: #222d3a;     
+  
+  --newcolor-main: #f1f5f9;     
+  --newcolor-muted: #94A3B8; 
+  --newcolor-dim: #eae0c80d; 
+  --newcolor-accent: #fdf8ea;  
+     
+  
+  --border: #282f3a;            
+  --input: #1E293B;            
+  --ring: #475569;              
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-newcolor: var(--newcolor);
+  --color-newcolor-secondary: var(--newcolor-secondary);
+  --color-newcolor-accent: var(--newcolor-accent);
+  --color-newcolor-dim: var(--newcolor-dim);
+  --color-newcolor-main: var(--newcolor-main);
+  --color-newcolor-muted: var(--newcolor-muted);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-newcolor: var(--newcolor);
+  --color-newcolor-secondary: var(--newcolor-secondary);
+  --color-newcolor-accent: var(--newcolor-accent);
+  --color-newcolor-dim: var(--newcolor-dim);
+  --color-newcolor-main: var(--newcolor-main);
+  --color-newcolor-muted: var(--newcolor-muted);
+
+    --font-sans: var(--font-inter);
+    --font-heading: var(--font-outfit);
+  
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased ;
+    /* Noise Texture for Realism */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Glass Card Utility */
+  
+}
