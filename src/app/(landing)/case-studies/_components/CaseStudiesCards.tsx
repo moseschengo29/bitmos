@@ -6,14 +6,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ArrowRight, Calendar, FolderGit2 } from "lucide-react";
 
-// Register GSAP plugin safely
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
 }
 
-// ==========================================
-// CARD DATA PAYLOAD
-// ==========================================
+
 const CASE_STUDIES = [
   {
     id: "01",
@@ -66,7 +63,6 @@ export default function CaseStudyCards() {
     <section ref={container} className="relative z-10 py-24 lg:py-32 bg-[#FAFAFA] border-y border-slate-200 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
-        {/* Section Header */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <span className="flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase text-blue-600 mb-6">
@@ -85,7 +81,6 @@ export default function CaseStudyCards() {
           </button>
         </div>
 
-        {/* 3-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {CASE_STUDIES.map((card, idx) => (
             <div 
@@ -93,13 +88,10 @@ export default function CaseStudyCards() {
               className="insight-card group relative flex flex-col bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(37,99,235,0.15)] ring-1 ring-slate-200 hover:ring-blue-300"
             >
               
-              {/* Internal Ambient Hover Glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none translate-x-8 -translate-y-8 z-0" />
 
-              {/* Top Section: Category & Content */}
               <div className="p-8 lg:p-10 flex-1 flex flex-col relative z-10">
                 
-                {/* Header Row (Pill + Watermark Number) */}
                 <div className="flex justify-between items-start mb-8">
                   <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg group-hover:border-blue-100 group-hover:bg-blue-50/50 transition-colors">
                     <FolderGit2 className="h-3.5 w-3.5 text-blue-600" />
@@ -107,7 +99,6 @@ export default function CaseStudyCards() {
                       {card.category}
                     </span>
                   </div>
-                  {/* Editorial Watermark Number */}
                   <span className="text-4xl font-heading font-black text-slate-100 group-hover:text-blue-100 transition-colors duration-500 select-none">
                     {card.id}
                   </span>
@@ -122,7 +113,6 @@ export default function CaseStudyCards() {
                 </p>
               </div>
 
-              {/* Footer Section: Date & CTA */}
               <div className="px-8 lg:px-10 py-6 border-t border-slate-100 bg-slate-50/50 group-hover:bg-white flex items-center justify-between mt-auto relative z-10 transition-colors duration-300">
                 
                 <div className="flex items-center gap-2 text-slate-400 group-hover:text-slate-500 transition-colors">

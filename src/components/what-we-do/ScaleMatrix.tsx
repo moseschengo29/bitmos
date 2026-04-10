@@ -41,8 +41,7 @@ const FEATURES = [
 
 export function ArchitecturalProwess() {
   const container = useRef<HTMLElement>(null);
-  const [activeIndex, setActiveIndex] = useState(2); // Default to the 3rd item per screenshot
-
+  const [activeIndex, setActiveIndex] = useState(2); 
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -78,12 +77,8 @@ export function ArchitecturalProwess() {
     <section ref={container} className="w-full bg-[#FAFAFA] py-24 md:py-32 font-sans overflow-hidden border-t border-slate-200">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         
-        {/* The 3-Column Editorial Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 border-y border-slate-200 bg-[#FAFAFA]">
           
-          {/* ========================================== */}
-          {/* LEFT COLUMN: TITLE                         */}
-          {/* ========================================== */}
           <div className="ap-left-col p-8 lg:p-16 flex flex-col justify-center">
              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-6 block">
                Architectural Prowess
@@ -93,9 +88,6 @@ export function ArchitecturalProwess() {
              </h2>
           </div>
 
-          {/* ========================================== */}
-          {/* MIDDLE COLUMN: INTERACTIVE TABS            */}
-          {/* ========================================== */}
           <div className="flex flex-col bg-[#FAFAFA] relative z-10 py-8 lg:py-0">
             <div className="flex flex-col h-full justify-center">
               {FEATURES.map((feature, index) => {
@@ -108,12 +100,10 @@ export function ArchitecturalProwess() {
                     onClick={() => setActiveIndex(index)}
                     className="ap-tab relative cursor-pointer group"
                   >
-                    {/* The physical tab background/border for active state */}
                     <div className={`absolute inset-x-0 inset-y-[-1px] transition-all duration-300 pointer-events-none z-0
                       ${isActive ? 'bg-white border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.04)] lg:-ml-4 lg:-mr-4 rounded-sm' : 'bg-transparent border-t border-transparent group-hover:bg-slate-50'}
                     `} />
                     
-                    {/* Tab Content */}
                     <div className={`relative z-10 flex items-center justify-between px-8 lg:px-12 py-8 transition-colors duration-300 border-b border-slate-200
                       ${isActive ? 'border-transparent' : ''}
                     `}>
@@ -134,9 +124,6 @@ export function ArchitecturalProwess() {
             </div>
           </div>
 
-          {/* ========================================== */}
-          {/* RIGHT COLUMN: DYNAMIC CONTENT              */}
-          {/* ========================================== */}
           <div className="ap-right-col p-8 lg:p-16 bg-white lg:bg-[#FAFAFA] relative">
             <AnimatePresence mode="wait">
               <motion.div
@@ -148,7 +135,6 @@ export function ArchitecturalProwess() {
                 className="flex flex-col h-full justify-center"
               >
                 
-                {/* Challenge Section */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="h-1.5 w-1.5 bg-slate-300 rounded-full" />
@@ -161,7 +147,6 @@ export function ArchitecturalProwess() {
                   </p>
                 </div>
 
-                {/* Solution Section */}
                 <div className="mb-16">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="h-1.5 w-1.5 bg-blue-600 rounded-full" />
@@ -174,7 +159,6 @@ export function ArchitecturalProwess() {
                   </p>
                 </div>
 
-                {/* Footer: Tech Stack Pills */}
                 <div className="mt-auto pt-8 border-t border-slate-200">
                   <div className="flex flex-wrap gap-2">
                     {activeData.tech.map((techItem, i) => (

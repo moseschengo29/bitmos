@@ -119,16 +119,11 @@ function FolderCard({ item, index, total, isMobile }: { item: any, index: number
   // Smooth, stable scale compression
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.96]);
   
-  // ==========================================
-  // RESPONSIVE TAB MATH
-  // ==========================================
-  // Desktop: Tabs divide the screen equally (e.g. 25% width each)
-  // Mobile: Tabs are wider (45%) to fit text, and overlap gracefully across the 100% width.
+  
   const tabWidth = isMobile ? 45 : (100 / total); 
   const safeTotal = total > 1 ? total - 1 : 1;
   const tabLeft = isMobile ? (index * (55 / safeTotal)) : (index * tabWidth);
   
-  // Stacking offset: Reduced on mobile to prevent the stack from eating up the whole viewport
   const topOffset = isMobile ? 42 : 56;
   const vhOffset = isMobile ? 10 : 15;
   const stickyTop = `calc(${vhOffset}vh + ${index * topOffset}px)`;
@@ -139,17 +134,14 @@ function FolderCard({ item, index, total, isMobile }: { item: any, index: number
   return (
     <div 
       ref={cardRef} 
-      // Adjusted height for mobile to ensure content fits without clipping
       className="sticky flex items-start justify-center w-full min-h-[450px] h-[65vh] md:h-[70vh]"
       style={{ top: stickyTop }}
     >
       <motion.div 
         style={{ scale }}
-        // Adjusted padding-top to match the smaller mobile tab height
         className={`relative w-full h-full ${isMobile ? "pt-[38px]" : "pt-[48px]"} origin-top drop-shadow-[0_15px_40px_rgba(0,0,0,0.08)]`}
       >
 
-        {/* The Folder Tab */}
         <div 
           className={`absolute top-0 ${isMobile ? "h-[40px]" : "h-[50px]"} ${FOLDER_COLOR} rounded-t-xl flex items-center px-3 md:px-5 z-0 transition-all duration-300`}
           style={{ left: `${tabLeft}%`, width: `${tabWidth}%` }}

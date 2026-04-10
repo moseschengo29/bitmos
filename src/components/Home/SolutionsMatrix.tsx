@@ -72,9 +72,7 @@ export default function SolutionsMatrix() {
     <section ref={container} className="w-full bg-[#FAFAFA] text-slate-900 border-y border-slate-200 font-sans">
       <div className="flex flex-col lg:flex-row w-full max-w-[1600px] mx-auto lg:min-h-[700px]">
         
-        {/* ======================================= */}
-        {/* LEFT COLUMN: Sticky Context             */}
-        {/* ======================================= */}
+  
         <div className="w-full lg:w-[25%] xl:w-[30%] border-b lg:border-b-0 lg:border-r border-slate-200 p-6 sm:p-10 lg:p-12 xl:p-16 flex flex-col items-start relative bg-[#FAFAFA]">
           <div className="lg:sticky lg:top-32">
             <span className="inline-block px-3 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-6 lg:mb-8 border border-slate-200 rounded-full lg:border-none lg:px-0 lg:py-0">
@@ -87,10 +85,7 @@ export default function SolutionsMatrix() {
           </div>
         </div>
 
-        {/* ======================================= */}
-        {/* MIDDLE COLUMN: Interactive Tabs         */}
-        {/* ======================================= */}
-        {/* On mobile: Horizontal scrollable row. On Desktop: Vertical stack. */}
+       
         <div className="w-full lg:w-[30%] xl:w-[30%] border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible bg-[#FAFAFA] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {SOLUTIONS.map((solution, index) => {
             const Icon = solution.icon;
@@ -126,13 +121,10 @@ export default function SolutionsMatrix() {
           })}
         </div>
 
-        {/* ======================================= */}
-        {/* RIGHT COLUMN: The Spec Sheet (Content)  */}
-        {/* ======================================= */}
+      
         <div className="w-full lg:flex-1 bg-white flex flex-col relative min-h-[500px]">
           <div ref={contentRef} className="flex flex-col h-full">
             
-            {/* Top Area: Challenge & Solution */}
             <div className="p-6 sm:p-10 lg:p-12 xl:p-16 flex-grow flex flex-col gap-8 lg:gap-10">
               
               <div>
@@ -155,7 +147,6 @@ export default function SolutionsMatrix() {
                 </p>
               </div>
 
-              {/* Tech Stack Pills */}
               <div className="mt-4 lg:mt-auto pt-6 lg:pt-8 flex flex-wrap gap-2 border-t border-slate-100">
                 {activeData.techStack.map((tech) => (
                   <span key={tech} className="inline-flex items-center border border-slate-200 bg-[#FAFAFA] px-2.5 py-1 lg:px-3 lg:py-1.5 text-[9px] lg:text-[10px] font-mono font-bold uppercase tracking-widest text-slate-500 rounded-sm">
@@ -166,8 +157,7 @@ export default function SolutionsMatrix() {
 
             </div>
 
-            {/* Bottom Area: Metrics Grid */}
-            {/* Kept as a 2-column grid on mobile to look like a data-sheet */}
+            
             <div className="grid grid-cols-2 border-t border-slate-200 bg-[#FAFAFA] mt-auto">
               {activeData.metrics.map((metric, idx) => (
                 <div key={idx} className="p-5 sm:p-8 lg:p-10 border-r border-slate-200 last:border-r-0 flex flex-col justify-center">
@@ -188,7 +178,6 @@ export default function SolutionsMatrix() {
 
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -71,7 +71,6 @@ export default function TechArchitectureFlow() {
 
   // GSAP Animations
   useGSAP(() => {
-    // 1. Animate the numbers (Uses class names so it targets BOTH mobile and desktop layouts simultaneously)
     Object.keys(metrics).forEach((key) => {
       const metricKey = key as keyof typeof metrics;
       const prevVal = prevMetrics[metricKey];
@@ -92,7 +91,6 @@ export default function TechArchitectureFlow() {
       }
     });
 
-    // 2. Animate Horizontal SVG "Bits" (Desktop)
     gsap.to(".flowing-bits", {
       strokeDashoffset: -36, 
       duration: 1,
@@ -129,9 +127,7 @@ export default function TechArchitectureFlow() {
         </h2>
       </div>
 
-      {/* ========================================= */}
-      {/* MOBILE LAYOUT (Vertical Stack)            */}
-      {/* ========================================= */}
+
       <div className="flex flex-col lg:hidden w-full max-w-xl mx-auto items-center">
         
         {/* 1. Mobile Inputs Grid */}
@@ -191,14 +187,12 @@ export default function TechArchitectureFlow() {
           </div>
         </div>
 
-        {/* 4. Mobile Connector Down */}
         <div className="h-10 w-px bg-slate-200 relative my-2">
           {activeInputs.length > 0 && (
             <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-1.5 h-4 bg-blue-600 rounded-full flowing-bits-vertical" />
           )}
         </div>
 
-        {/* 5. Mobile Outcomes Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full z-10">
           {OUTCOMES.map((outcome) => {
             const val = metrics[outcome.id as keyof typeof metrics];
@@ -229,9 +223,7 @@ export default function TechArchitectureFlow() {
 
       </div>
 
-      {/* ========================================= */}
-      {/* DESKTOP LAYOUT (Horizontal Flow)          */}
-      {/* ========================================= */}
+    
       <div className="hidden lg:flex mx-auto max-w-[1300px] items-center justify-center pb-10">
         <div className="flex w-full items-center px-4">
           

@@ -48,7 +48,6 @@ export function KineticCapabilities() {
   const container = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   
-  // Create an array of refs to target specific rows for scrolling
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {

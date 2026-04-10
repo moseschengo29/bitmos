@@ -50,10 +50,8 @@ export function ExecutionTrack() {
       <section ref={container} className="w-full bg-[#FAFAFA] py-24 md:py-32 font-sans border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           
-          {/* Asymmetrical Sticky Layout */}
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
             
-            {/* Left: Sticky Context */}
             <div className="lg:w-1/3 shrink-0">
               <div className="sticky top-32">
                 <span className="exec-title text-[10px] font-bold tracking-[0.2em] uppercase text-blue-600 block mb-6">
@@ -72,7 +70,6 @@ export function ExecutionTrack() {
               </div>
             </div>
   
-            {/* Right: Scrolling Phases */}
             <div className="lg:w-2/3 flex flex-col border-l border-slate-200">
               {METHODOLOGY.map((item, index) => (
                 <div key={index} className="exec-phase relative pl-10 md:pl-16 pb-20 md:pb-32 group">

@@ -10,10 +10,8 @@ export default function LeadGenModal() {
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    // 1. Check if the user has already seen/dismissed the modal
     const hasSeenModal = localStorage.getItem("bitmos_lead_modal_dismissed");
     
-    // 2. If not, trigger the modal after 5 seconds (set to 1000ms currently for testing)
     if (!hasSeenModal) {
       const timer = setTimeout(() => {
         setIsOpen(true);
@@ -25,7 +23,6 @@ export default function LeadGenModal() {
 
   const handleClose = () => {
     setIsOpen(false);
-    // Remember that the user closed it so we don't annoy them again
     localStorage.setItem("bitmos_lead_modal_dismissed", "true");
   };
 
@@ -33,13 +30,9 @@ export default function LeadGenModal() {
     e.preventDefault();
     if (!email) return;
 
-    // TODO: Send email to your API/CRM here
-    // await fetch('/api/leads', { method: 'POST', body: JSON.stringify({ email }) })
-
     setIsSubmitted(true);
     localStorage.setItem("bitmos_lead_modal_dismissed", "true");
     
-    // Optional: Auto-close after success
     setTimeout(() => {
       setIsOpen(false);
     }, 3000);
@@ -50,9 +43,6 @@ export default function LeadGenModal() {
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 pt-10 pb-20">
           
-          {/* ======================================= */}
-          {/* 1. BACKDROP BLUR */}
-          {/* ======================================= */}
           <motion.div
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ opacity: 1, backdropFilter: "blur(4px)" }}
@@ -62,9 +52,7 @@ export default function LeadGenModal() {
             onClick={handleClose}
           />
 
-          {/* ======================================= */}
-          {/* 2. THE MODAL CONTAINER (Light Theme) */}
-          {/* ======================================= */}
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -72,7 +60,6 @@ export default function LeadGenModal() {
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
             className="relative w-full max-w-lg bg-white border border-slate-200 rounded-3xl shadow-2xl shadow-slate-300/50 overflow-hidden"
           >
-            {/* Close Button */}
             <button 
               onClick={handleClose}
               className="absolute top-5 right-5 z-20 p-2 rounded-full bg-slate-50 border border-slate-200 text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-colors"
@@ -81,7 +68,6 @@ export default function LeadGenModal() {
               <X className="h-4 w-4" strokeWidth={2.5} />
             </button>
 
-            {/* Modal Content */}
             <div className="relative z-10 p-8 sm:p-10">
               <AnimatePresence mode="wait">
                 
@@ -137,9 +123,7 @@ export default function LeadGenModal() {
                   </motion.div>
                 ) : (
                   
-                  /* ======================================= */
-                  /* 3. SUCCESS STATE                        */
-                  /* ======================================= */
+                  
                   <motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.95 }}

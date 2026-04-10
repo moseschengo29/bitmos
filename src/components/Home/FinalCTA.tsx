@@ -69,8 +69,7 @@ export default function EnterpriseCTA() {
       className="relative overflow-hidden bg-[#FAFAFA] pt-24 pb-32 border-t border-slate-200 font-sans min-h-[600px] flex items-center"
     >
       
-      {/* --- THE LOUVER OVERLAY --- */}
-      {/* Pristine white panels that cover the section until GSAP opens them */}
+
       <div className="absolute inset-0 z-30 flex pointer-events-none">
         {Array.from({ length: TOTAL_PANELS }).map((_, i) => (
           <div 
@@ -80,17 +79,14 @@ export default function EnterpriseCTA() {
         ))}
       </div>
 
-      {/* Background architectural grid */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
         <div className="absolute top-0 left-1/2 w-[1px] h-full bg-gradient-to-b from-slate-200 via-transparent to-transparent -translate-x-1/2"></div>
       </div>
 
-      {/* --- THE CTA CONTENT --- */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* LEFT: BOLD TYPOGRAPHY */}
           <div className="flex flex-col items-start lg:pr-12">
             <h2 className="cta-text-element font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.05] mb-6">
               Stop wrestling with technical debt.
@@ -100,7 +96,6 @@ export default function EnterpriseCTA() {
               Partner with Bitmos Technologies to engineer scalable, high-performance software. We bypass the sales pitch and get straight to solving your most complex architectural constraints.
             </p>
 
-            {/* Trust Badges */}
             <div className="cta-text-element flex flex-wrap items-center gap-6 pt-6 border-t border-slate-200 w-full max-w-md">
               <p className="w-full text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
                 Trusted by elite engineering teams
@@ -111,7 +106,6 @@ export default function EnterpriseCTA() {
             </div>
           </div>
 
-          {/* RIGHT: THE ACTION CARD */}
           <div className="relative w-full flex justify-center lg:justify-end">
             
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[80%] w-[80%] rounded-full bg-blue-100/50 blur-[80px] pointer-events-none"></div>

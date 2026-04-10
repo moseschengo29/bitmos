@@ -77,9 +77,7 @@ export default function KineticTimeline() {
     <section className="w-full bg-[#FAFAFA] py-12 font-sans overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-8">
         
-        {/* ========================================== */}
-        {/* RESTRUCTURED EDITORIAL HEADER              */}
-        {/* ========================================== */}
+     
         <div className="flex justify-between items-start mb-24 relative z-20">
           <div className="max-w-2xl">
             {/* Subtitle moved above Title */}

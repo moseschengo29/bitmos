@@ -97,13 +97,9 @@ export default function CareersPage() {
           </p>
         </div>
 
-        {/* ========================================== */}
-        {/* 2. OPEN POSITIONS (Split Layout)           */}
-        {/* ========================================== */}
         <div className="border-t border-slate-200 mb-32">
           <div className="flex flex-col lg:flex-row">
             
-            {/* LEFT: Role List */}
             <div className="w-full lg:w-1/3 lg:border-r border-slate-200">
               <div className="p-6 lg:p-8 border-b border-slate-200 bg-[#FAFAFA]">
                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Open Requisitions</span>
@@ -220,9 +216,7 @@ export default function CareersPage() {
           </div>
         </div>
 
-        {/* ========================================== */}
-        {/* 3. ENGINEERING CULTURE (Hairline Grid)     */}
-        {/* ========================================== */}
+      
         <section className="culture-trigger pb-24 md:pb-32">
           <div className="mb-16">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-600 mb-4 block">

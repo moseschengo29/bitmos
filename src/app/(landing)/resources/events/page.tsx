@@ -26,10 +26,7 @@ import EnterpriseCTA from "@/src/components/Home/FinalCTA";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-// ==========================================
-// UNIFIED DATA PAYLOAD
-// ==========================================
-// Added 'isoDate' for programmatic calendar mapping and sorting.
+
 const CATEGORIES = ["All Briefings", "Masterclass", "Global Summit", "Technical Panel"];
 
 const MASTER_AGENDA = [
@@ -71,7 +68,7 @@ const MASTER_AGENDA = [
   },
   {
     id: "EVT-086",
-    isoDate: "2026-11-05", // Event in a different month to test calendar pagination
+    isoDate: "2026-11-05", 
     title: "The Physics of Edge-Native Commerce.",
     type: "Masterclass",
     status: "WAITLIST",
@@ -100,7 +97,6 @@ const ARCHIVED_BRIEFINGS = [
   }
 ];
 
-// Helper to format dates nicely for the UI
 const formatUIDate = (isoString: string) => {
   const date = new Date(isoString);
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toUpperCase();
@@ -109,40 +105,29 @@ const formatUIDate = (isoString: string) => {
 export default function EventsPage() {
   const container = useRef<HTMLElement>(null);
   
-  // UI State
   const [expandedId, setExpandedId] = useState<string | null>(MASTER_AGENDA[0].id);
   const [viewMode, setViewMode] = useState<"list" | "calendar">("list"); 
   const [activeCategory, setActiveCategory] = useState("All Briefings");
   
-  // Calendar Engine State (Default to Oct 2026 to show our mock data)
   const [currentDate, setCurrentDate] = useState(new Date(2026, 9, 1)); // Month is 0-indexed (9 = Oct)
 
-  // ==========================================
-  // FUNCTIONAL LOGIC
-  // ==========================================
-
-  // 1. Filter the master agenda based on category
   const filteredAgenda = useMemo(() => {
     let filtered = MASTER_AGENDA;
     if (activeCategory !== "All Briefings") {
       filtered = filtered.filter(event => event.type.toLowerCase() === activeCategory.toLowerCase());
     }
-    // Sort by date ascending
     return filtered.sort((a, b) => new Date(a.isoDate).getTime() - new Date(b.isoDate).getTime());
   }, [activeCategory]);
 
-  // 2. Calendar Engine Math
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
   
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDayOfMonth = new Date(year, month, 1).getDay();
-  // Shift so Monday is the first day of the grid (0 = Mon, 6 = Sun)
   const emptyDaysPrefix = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1; 
   
   const totalGridCells = Math.ceil((daysInMonth + emptyDaysPrefix) / 7) * 7;
 
-  // 3. Calendar Navigation Handlers
   const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
   const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
   const goToday = () => {
@@ -153,9 +138,7 @@ export default function EventsPage() {
 
   const monthName = currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }).toUpperCase();
 
-  // ==========================================
-  // ANIMATIONS
-  // ==========================================
+  
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.fromTo(".hero-word", 
@@ -191,9 +174,7 @@ export default function EventsPage() {
   return (
     <main ref={container} className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-blue-600 selection:text-white">
       
-      {/* ========================================== */}
-      {/* 1. CONTINUOUS TICKER MARQUEE               */}
-      {/* ========================================== */}
+
       <div className="w-full border-b border-slate-200 bg-white overflow-hidden py-4 pt-24 md:pt-32">
         <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
           {[...Array(4)].map((_, i) => (
@@ -258,9 +239,6 @@ export default function EventsPage() {
           ))}
         </div>
 
-        {/* ========================================== */}
-        {/* 3. DYNAMIC CONTENT AREA (List vs Calendar) */}
-        {/* ========================================== */}
         <AnimatePresence mode="wait">
           
           {viewMode === "list" && (
@@ -466,9 +444,6 @@ export default function EventsPage() {
         </AnimatePresence>
       </div>
 
-      {/* ========================================== */}
-      {/* 4. ON-DEMAND ARCHIVE                       */}
-      {/* ========================================== */}
      <section className="archive-trigger bg-white py-24 md:py-32 border-t border-slate-200 text-black relative overflow-hidden">
              
              <div className="max-w-[1400px] mx-auto px-6 lg:px-8 relative z-10">

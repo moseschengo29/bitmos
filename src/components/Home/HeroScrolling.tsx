@@ -132,18 +132,15 @@ export default function HeroProjectRibbon() {
   </div>
 </div>
 
-      {/* Enlarged Seamless Ribbon - Light Theme */}
       <div ref={triggerRef} className="relative w-full bg-white -rotate-1 border-y border-slate-200 overflow-hidden py-0 shadow-inner">
         <div className="flex flex-col rotate-1 scale-105">
           
-          {/* Row 1 (Moving Left) */}
           <motion.div style={{ x: xRow1 }} className="flex w-max border-b border-slate-200">
             {PROJECT_POOL.map((p) => <ProjectCard key={`r1-a-${p.id}`} {...p} />)}
             {PROJECT_POOL.map((p) => <ProjectCard key={`r1-b-${p.id}`} {...p} />)}
             {PROJECT_POOL.map((p) => <ProjectCard key={`r1-c-${p.id}`} {...p} />)}
           </motion.div>
 
-          {/* Row 2 (Moving Right) */}
           <motion.div style={{ x: xRow2 }} className="flex w-max">
             {PROJECT_POOL.map((p) => <ProjectCard key={`r2-a-${p.id}`} {...p} />)}
             {PROJECT_POOL.map((p) => <ProjectCard key={`r2-b-${p.id}`} {...p} />)}

@@ -9,9 +9,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-// ==========================================
-// DATA PAYLOAD (Images Removed)
-// ==========================================
+
 const TEAM_MEMBERS = [
     {
       id: "01",
@@ -37,9 +35,7 @@ const TEAM_MEMBERS = [
    
   ];
 
-// ==========================================
-// BLANK AVATAR COMPONENT
-// ==========================================
+
 const BlankAvatar = () => (
   // Clean, solid background. No grid lines. 
   <div className="absolute inset-0 flex items-center justify-center bg-slate-50 transition-colors duration-500 group-hover:bg-slate-100">

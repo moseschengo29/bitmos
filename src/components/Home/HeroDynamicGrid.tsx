@@ -62,12 +62,9 @@ export default function HeroDynamicGrid() {
   };
 
   return (
-    // Pure, flat Navy Blue background
     <section className="relative w-full bg-[#061121] font-sans text-white overflow-hidden flex flex-col pt-24 pb-24 border-t border-[#1a2b4a]">
       
-      {/* PROFESSIONAL HEADER */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex flex-col items-center text-center">
-        {/* Solid Gold color - no opacity */}
         <span className="text-[#FFD700] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-4">
           [ Core Capabilities ]
         </span>
@@ -77,16 +74,13 @@ export default function HeroDynamicGrid() {
           Engineered for performance.
         </h2>
         
-        {/* Solid muted gray color */}
         <p className="mt-6 text-sm sm:text-base text-[#8a9db8] max-w-2xl font-medium leading-relaxed">
           We provide end-to-end technical solutions designed to future-proof your business. Hover over a module to explore our specialized engineering domains.
         </p>
 
       </div>
 
-      {/* ======================================= */}
-      {/* THE FLUID STRUCTURAL GRID */}
-      {/* ======================================= */}
+   
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         
         <div 
@@ -95,7 +89,6 @@ export default function HeroDynamicGrid() {
           style={{
             gridTemplateColumns: "var(--c0) var(--c1) var(--c2) var(--c3)",
             gridTemplateRows: "var(--r0) var(--r1) var(--r2)",
-            // The Premium Fluid Easing curve. Removed choppiness.
             transition: "grid-template-columns 0.6s cubic-bezier(0.22, 1, 0.36, 1), grid-template-rows 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
             ...getGridStyle()
           }}
@@ -116,14 +109,12 @@ export default function HeroDynamicGrid() {
                 
                 {/* Intersection Nodes (The HUD/Cyber corner rectangles) */}
                 <div 
-                  // No shadows, no blur. Solid colors.
                   className={`absolute -bottom-[2px] -right-[2px] w-[4px] h-[4px] transition-all duration-300 ease-out
                     ${isHovered ? 'bg-[#FFD700] z-20 scale-125' : 'bg-[#1a2b4a] z-0'}
                   `} 
                 />
 
-                {/* 1. INACTIVE STATE (Sleek, small text) */}
-                {/* Fixed layering: Now correctly removed from render flow during hover */}
+               
                 <div className="absolute inset-0 flex items-center justify-center p-2 z-10 pointer-events-none">
                   <AnimatePresence>
                     {!isHovered && (
@@ -143,8 +134,7 @@ export default function HeroDynamicGrid() {
                   </AnimatePresence>
                 </div>
 
-                {/* 2. ACTIVE STATE (Icon, Title, Desc) */}
-                {/* z-10 ensures this content sits cleanly above everything else */}
+                
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-8 text-center z-10 pointer-events-none">
                   <AnimatePresence>
                     {isHovered && (
@@ -156,12 +146,10 @@ export default function HeroDynamicGrid() {
                         transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }} // Easy ease
                         className="flex flex-col items-center justify-center"
                       >
-                        {/* No blurred glows behind the icon */}
                         <div className="mb-4 bg-[#14264d] p-3 rounded-xl border border-[#1a2b4a]">
                           {item.icon}
                         </div>
                         
-                        {/* Title matching yellow brand color */}
                         <h3 className="text-xl md:text-2xl font-bold text-[#FFD700] mb-3 leading-tight">
                           {item.title}
                         </h3>

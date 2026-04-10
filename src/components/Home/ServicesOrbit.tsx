@@ -56,13 +56,9 @@ export default function ServicesOrbit() {
   return (
     <section ref={containerRef} className="relative h-[400vh] bg-white font-sans">
       
-      {/* STICKY VIEWPORT */}
       <div className="sticky top-0 h-[100dvh] w-full flex items-center justify-center overflow-hidden">
         
-        {/* ======================================= */}
-        {/* THE BACKGROUND HUB (Locked Coordinates)   */}
-        {/* ======================================= */}
-        {/* FIX: Anchored the hub center to exactly top-[65%] on mobile to sync with the text orbit */}
+       
         <div className={`absolute pointer-events-none select-none transition-all duration-700
           w-[150vw] h-[150vw] max-w-[600px] max-h-[600px] top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2
           md:w-[800px] md:h-[800px] md:top-1/2 md:left-0 md:-translate-y-1/2 md:-translate-x-[40%] md:max-w-none md:max-h-none
@@ -83,7 +79,6 @@ export default function ServicesOrbit() {
             style={{ borderStyle: "dashed" }} 
           />
 
-          {/* The Glassmorphic Center Hub */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px]">
             <div className="absolute inset-[-40px] bg-blue-600/5 rounded-full blur-3xl"></div>
             
@@ -104,9 +99,7 @@ export default function ServicesOrbit() {
           </div>
         </div>
 
-        {/* ======================================= */}
-        {/* THE ORBITAL ENGINE TEXT                   */}
-        {/* ======================================= */}
+
         {mounted && (
           // FIX: Positioned the text container exactly 240px above the 65% mark on mobile.
           <div className={`absolute w-full flex z-10 h-0
@@ -133,9 +126,7 @@ export default function ServicesOrbit() {
   );
 }
 
-// ==========================================
-// INDIVIDUAL ORBITING ITEM
-// ==========================================
+
 function OrbitalItem({ item, index, total, progress, isMobile }: { item: any, index: number, total: number, progress: any, isMobile: boolean }) {
   
   const ITEM_SEPARATION = isMobile ? 75 : 50; 
@@ -164,8 +155,7 @@ function OrbitalItem({ item, index, total, progress, isMobile }: { item: any, in
     [0.85, 1, 0.85]
   );
 
-  // FIX: Reduced the orbit radius to 240px. Because the text container is pushed up exactly 240px, 
-  // this creates a perfect mathematical pivot directly in the center of the visual Hub.
+  
   const transformOrigin = isMobile ? "50% 240px" : "-100% 50%";
 
   return (

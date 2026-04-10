@@ -117,7 +117,6 @@ export default function LmsShowcase() {
 
         </div>
 
-        {/* --- PERFORMANCE METRICS GRID --- */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200 rounded-3xl overflow-hidden mb-24">
           {METRICS.map((metric, idx) => {
             const Icon = metric.icon;
@@ -137,13 +136,10 @@ export default function LmsShowcase() {
           })}
         </div>
 
-        {/* --- ABSTRACT UI SHOWCASE (The "Hero Image") --- */}
         <div className="cs-image-wrapper relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-[2.5rem] bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center">
           
-          {/* Abstract background grid for the mock UI */}
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(#1E293B 1px, transparent 1px), linear-gradient(90deg, #1E293B 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
           
-          {/* Mock Dashboard UI Overlay (Pure CSS/HTML to keep it lightweight and sharp) */}
           <div className="relative z-10 w-[80%] h-[70%] bg-[#0F172A] border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
             {/* Top Bar */}
             <div className="h-12 border-b border-slate-800 flex items-center px-6 gap-4">

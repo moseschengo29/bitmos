@@ -13,7 +13,6 @@ export default function TelemetryGrid() {
   const throughputRef = useRef<HTMLSpanElement>(null);
   const requestsRef = useRef<HTMLSpanElement>(null);
 
-  // GSAP Number Counters & Reveal Animation
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -57,9 +56,7 @@ export default function TelemetryGrid() {
     <section ref={container} className="w-full bg-[#FAFAFA] text-slate-900 border-b border-slate-200 font-sans overflow-hidden">
       <div className="flex flex-col lg:flex-row w-full max-w-[1600px] mx-auto lg:min-h-[600px]">
         
-        {/* ======================================= */}
-        {/* LEFT COLUMN: Sticky Context             */}
-        {/* ======================================= */}
+       
         <div className="w-full lg:w-[30%] border-b lg:border-b-0 lg:border-r border-slate-200 p-6 sm:p-10 lg:p-16 flex flex-col items-start relative bg-[#FAFAFA] z-10">
           <div className="lg:sticky lg:top-32 w-full">
             
@@ -87,12 +84,9 @@ export default function TelemetryGrid() {
           </div>
         </div>
 
-        {/* ======================================= */}
-        {/* RIGHT COLUMN: The Data Grid             */}
-        {/* ======================================= */}
+      
         <div className="w-full lg:w-[70%] grid grid-cols-1 md:grid-cols-2 bg-[#FAFAFA]">
           
-          {/* CELL 1: System Uptime */}
           <div className="telemetry-cell group border-b md:border-r border-slate-200 p-6 sm:p-8 lg:p-12 flex flex-col justify-between hover:bg-white transition-colors duration-500 min-h-[250px] sm:min-h-[300px]">
             <div className="flex flex-wrap gap-3 items-center justify-between mb-6 sm:mb-8">
               <div className="flex items-center gap-2 sm:gap-3 text-slate-400 group-hover:text-blue-600 transition-colors">
@@ -150,8 +144,7 @@ export default function TelemetryGrid() {
             </div>
           </div>
 
-          {/* CELL 3: Edge Network */}
-          {/* FIX: added 'border-b md:border-b-0' to keep borders clean on mobile stacking */}
+         
           <div className="telemetry-cell group border-b md:border-b-0 md:border-r border-slate-200 p-6 sm:p-8 lg:p-12 flex flex-col justify-between hover:bg-white transition-colors duration-500 min-h-[250px] sm:min-h-[300px] relative overflow-hidden">
             <div className="absolute -bottom-20 -right-20 sm:-bottom-24 sm:-right-24 w-56 h-56 sm:w-64 sm:h-64 border border-slate-200 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-100 transition-opacity duration-700">
                <div className="w-40 h-40 sm:w-48 sm:h-48 border border-slate-200 rounded-full flex items-center justify-center">
@@ -180,7 +173,6 @@ export default function TelemetryGrid() {
             </div>
           </div>
 
-          {/* CELL 4: Security */}
           <div className="telemetry-cell group p-6 sm:p-8 lg:p-12 flex flex-col justify-between hover:bg-white transition-colors duration-500 min-h-[250px] sm:min-h-[300px]">
             <div className="flex flex-wrap gap-3 items-center justify-between mb-6 sm:mb-8">
               <div className="flex items-center gap-2 sm:gap-3 text-slate-400 group-hover:text-rose-600 transition-colors">

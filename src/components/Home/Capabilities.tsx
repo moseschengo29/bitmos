@@ -31,7 +31,6 @@ export default function Capabilities() {
 
   useGSAP(
     () => {
-      // Create a timeline that triggers when this section enters the viewport
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
@@ -41,22 +40,19 @@ export default function Capabilities() {
         defaults: { ease: "power3.out" }
       });
 
-      // 1. Reveal the section header
       tl.fromTo(
         ".cap-header",
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.15 }
       );
 
-      // 2. Reveal the grid lines (animating the borders)
       tl.fromTo(
         ".cap-grid-wrapper",
-        { borderColor: "rgba(226, 232, 240, 0)" }, // transparent slate-200
+        { borderColor: "rgba(226, 232, 240, 0)" },
         { borderColor: "rgba(226, 232, 240, 1)", duration: 1 },
         "-=0.4"
       );
 
-      // 3. Reveal the individual capability cards
       tl.fromTo(
         ".cap-card",
         { opacity: 0, y: 40 },
@@ -74,7 +70,6 @@ export default function Capabilities() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
-        {/* --- SECTION HEADER --- */}
         <div className="max-w-3xl mb-16 lg:mb-24">
           <h2 className="cap-header text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">
             Core Capabilities
@@ -85,8 +80,7 @@ export default function Capabilities() {
           </p>
         </div>
 
-        {/* --- ARCHITECTURAL BORDER GRID --- */}
-        {/* The 'divide' utilities create clean internal borders without doubling up */}
+        
         <div className="cap-grid-wrapper grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 border-y border-slate-200">
           
           {capabilities.map((item, index) => (
@@ -94,7 +88,6 @@ export default function Capabilities() {
               key={index} 
               className="cap-card group flex flex-col p-8 lg:p-12 transition-colors hover:bg-slate-50"
             >
-              {/* Minimalist Numeric Indicator */}
               <div className="mb-12 font-heading text-5xl font-light text-slate-200 transition-colors group-hover:text-blue-600">
                 {item.num}
               </div>
@@ -107,7 +100,6 @@ export default function Capabilities() {
                 {item.desc}
               </p>
 
-              {/* Clean text link that appears on hover */}
               <div className="mt-8 mt-auto pt-8">
                 <a 
                   href="#learn-more" 

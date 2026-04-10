@@ -37,13 +37,12 @@ export default function ContactElite() {
           Engineering team available
         </div>
         <h1 className="reveal-heading font-heading text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05] mb-6">
-          Let's engineer <br/> <span className="text-slate-400">your next breakthrough.</span>
+          Let&apos;s engineer <br/> <span className="text-slate-400">your next breakthrough.</span>
         </h1>
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
         
-        {/* --- MAIN ELITE CARD --- */}
         <div className="elite-card flex flex-col lg:flex-row w-full rounded-[2.5rem] border border-slate-200/80 bg-white shadow-[0_20px_80px_-20px_rgba(0,0,0,0.06)] overflow-hidden mb-24">
           
           {/* LEFT SIDE: THE FORM (60%) */}
@@ -123,7 +122,6 @@ export default function ContactElite() {
             </form>
           </div>
 
-          {/* RIGHT SIDE: CONTEXT & TRUST (40%) */}
           <div className="w-full lg:w-[40%] flex flex-col bg-slate-50/50 border-t lg:border-t-0 lg:border-l border-slate-100">
             
             <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center flex-grow">
@@ -151,11 +149,10 @@ export default function ContactElite() {
                 </div>
               </div>
 
-              {/* Embedded Social Proof */}
               <div className="form-element relative rounded-2xl bg-white p-6 border border-slate-200 shadow-sm">
                 <Quote className="absolute top-4 right-4 h-8 w-8 text-slate-100 rotate-180" />
                 <p className="text-sm text-slate-600 font-medium leading-relaxed relative z-10 italic">
-                  "Bitmos completely overhauled our legacy backend. Their architecture review alone saved us months of misdirected engineering effort."
+                  &quot;Bitmos completely overhauled our legacy backend. Their architecture review alone saved us months of misdirected engineering effort.&quot;
                 </p>
                 <div className="mt-4 flex items-center gap-3">
                   <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-700">SJ</div>

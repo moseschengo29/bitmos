@@ -20,9 +20,6 @@ import {
   X
 } from "lucide-react";
 
-// ==========================================
-// FULL DATA PAYLOAD (MOCK CMS)
-// ==========================================
 const SIDEBAR_NAV = [
   {
     group: "GETTING STARTED",
@@ -284,7 +281,6 @@ export default function DocumentationPage() {
   return (
     <main ref={container} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white flex flex-col border-t border-slate-200">
    
-      {/* Mobile Header (Shows only on small screens) */}
       <div className="md:hidden flex items-center justify-between p-4 border-b border-slate-200 bg-[#FAFAFA] sticky top-16 z-30">
         <span className="font-mono text-xs font-bold tracking-widest text-slate-500 uppercase">{activeDoc.title}</span>
         <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 border border-slate-200 rounded-sm bg-white">
@@ -294,10 +290,6 @@ export default function DocumentationPage() {
 
       <div className="flex-1 flex flex-col md:flex-row relative z-10 w-full min-w-0">
         
-        {/* ========================================== */}
-        {/* 1. LEFT SIDEBAR                            */}
-        {/* ========================================== */}
-        {/* Desktop Sidebar */}
         <aside className="hidden md:block w-64 lg:w-72 shrink-0 border-r border-slate-200 bg-[#FAFAFA] h-[calc(100vh-80px)] sticky top-20 overflow-y-auto custom-scrollbar z-20">
           <SidebarContent />
         </aside>
@@ -317,9 +309,6 @@ export default function DocumentationPage() {
           )}
         </AnimatePresence>
 
-        {/* ========================================== */}
-        {/* 2. MAIN CONTENT AREA                       */}
-        {/* ========================================== */}
         <div className="flex-1 w-full bg-white relative">
           <AnimatePresence mode="wait">
             <motion.div
@@ -331,7 +320,6 @@ export default function DocumentationPage() {
               className="w-full pb-32"
             >
               
-              {/* PAGE HEADER */}
               <div className="px-6 lg:px-12 xl:px-16 py-12 lg:py-20 border-b border-slate-200 max-w-[800px]">
                 <span className="inline-block px-2.5 py-1 bg-slate-900 text-white text-[10px] font-mono font-bold tracking-widest uppercase mb-6 rounded-sm shadow-sm">
                   {activeDoc.badge}

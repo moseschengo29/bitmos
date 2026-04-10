@@ -8,8 +8,7 @@ import { Server, ShieldCheck, Zap, GitPullRequest, ArrowUpRight } from "lucide-r
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-// --- SPOTLIGHT CARD COMPONENT ---
-// This handles the beautiful Vercel-style cursor tracking glow
+
 const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -38,7 +37,6 @@ const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode
       onMouseLeave={handleMouseLeave}
       className={`relative overflow-hidden rounded-[2rem] border border-slate-200/60 bg-white shadow-sm transition-shadow duration-500 hover:shadow-md ${className}`}
     >
-      {/* The following glow */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
         style={{
@@ -92,7 +90,6 @@ export default function CapabilitiesBento() {
     <section ref={container} className="bg-[#FAFAFA] py-24 sm:py-32 font-sans overflow-hidden border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
-        {/* --- HEADER --- */}
         <div className="mb-16 md:mb-20">
           <p className="bento-header text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">
             Technical Arsenal
@@ -109,10 +106,8 @@ export default function CapabilitiesBento() {
           </div>
         </div>
 
-        {/* --- THE BENTO GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
           
-          {/* BENTO 1: WIDE (Cloud Native) */}
           <div className="bento-item md:col-span-2 h-full">
             <SpotlightCard className="h-full w-full flex flex-col justify-between p-8 sm:p-10 group cursor-default">
               
@@ -120,7 +115,6 @@ export default function CapabilitiesBento() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-100 bg-slate-50 text-slate-700 transition-colors group-hover:border-blue-100 group-hover:bg-blue-50 group-hover:text-blue-600">
                   <Server className="h-5 w-5" />
                 </div>
-                {/* Micro-UI: Server Array */}
                 <div className="flex gap-2">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="flex flex-col gap-1 w-8 rounded-lg border border-slate-100 bg-slate-50 p-1.5 opacity-60 transition-opacity group-hover:opacity-100">
@@ -141,7 +135,6 @@ export default function CapabilitiesBento() {
             </SpotlightCard>
           </div>
 
-          {/* BENTO 2: SQUARE (Security) */}
           <div className="bento-item md:col-span-1 h-full">
             <SpotlightCard className="h-full w-full flex flex-col justify-between p-8 sm:p-10 group cursor-default">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-100 bg-emerald-50 text-emerald-600 relative overflow-hidden">
@@ -158,11 +151,9 @@ export default function CapabilitiesBento() {
             </SpotlightCard>
           </div>
 
-          {/* BENTO 3: SQUARE (Latency) */}
           <div className="bento-item md:col-span-1 h-full">
             <SpotlightCard className="h-full w-full flex flex-col justify-between p-8 sm:p-10 group cursor-default">
               
-              {/* Micro-UI: Live Ping Graph */}
               <div className="flex items-end gap-1 h-12 w-full border-b border-slate-100 pb-2 mb-6 opacity-60 group-hover:opacity-100 transition-opacity">
                 {[20, 35, 25, 60, 30, 45, 25, 15, 30, 20].map((h, i) => (
                   <div key={i} className="flex-1 rounded-t-sm bg-slate-200 transition-all duration-300 group-hover:bg-amber-300" style={{ height: `${h}%` }}></div>
@@ -181,11 +172,9 @@ export default function CapabilitiesBento() {
             </SpotlightCard>
           </div>
 
-          {/* BENTO 4: WIDE (CI/CD Pipelines) */}
           <div className="bento-item md:col-span-2 h-full">
             <SpotlightCard className="h-full w-full flex flex-col justify-between p-8 sm:p-10 group cursor-default relative overflow-hidden">
               
-              {/* Background decorative data flow */}
               <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-[0.03] group-hover:opacity-10 transition-opacity duration-700 pointer-events-none">
                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="h-full w-full">
                    <path d="M0,50 C30,10 70,90 100,50" fill="none" stroke="#2563EB" strokeWidth="2" strokeDasharray="4 4" className="animate-[dash_30s_linear_infinite]" />
@@ -198,7 +187,6 @@ export default function CapabilitiesBento() {
                   <GitPullRequest className="h-5 w-5" />
                 </div>
                 
-                {/* Micro-UI: Pipeline Status */}
                 <div className="flex items-center gap-2 rounded-full border border-slate-100 bg-slate-50 px-3 py-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-slate-300 group-hover:bg-blue-500 transition-colors"></span>
                   <span className="h-1 w-4 bg-slate-200"></span>
@@ -211,7 +199,7 @@ export default function CapabilitiesBento() {
               <div className="relative z-10">
                 <h3 className="font-heading text-2xl font-bold text-slate-900 mb-3">Automated CI/CD Pipelines</h3>
                 <p className="text-sm text-slate-500 font-medium leading-relaxed max-w-md">
-                  Say goodbye to "deployment Fridays." We configure rigorous automated testing and seamless integration pipelines, ensuring that every push to production is safe, verified, and instantaneous.
+                  Say goodbye to &quot;deployment Fridays.&quot;We configure rigorous automated testing and seamless integration pipelines, ensuring that every push to production is safe, verified, and instantaneous.
                 </p>
               </div>
             </SpotlightCard>
