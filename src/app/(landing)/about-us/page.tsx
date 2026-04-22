@@ -14,6 +14,7 @@ import FinalCTA from '@/src/components/Home/FinalCTA';
 import Capabilities from "@/src/components/Home/Capabilities";
 import CapabilitiesBento from "@/src/components/About/Capabilities";
 import AboutHero from "@/src/components/About/AboutHero";
+import ArchitectureGrid from "@/src/components/About/Capabilities";
 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -91,9 +92,9 @@ export default function AboutCleanGrid() {
       <AboutExtended />
 
       <ConnectedTeam />
-      <CapabilitiesBento />
-
       <GlobalEdgeNetwork />
+      <ArchitectureGrid />
+
 
       <AnchorTestimonial />
 

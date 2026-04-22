@@ -7,6 +7,8 @@ import { KineticCapabilities } from "@/src/components/what-we-do/KineticCapabili
 import KineticTimeline from "@/src/components/what-we-do/KineticTimeline";
 import FinalCTA from '@/src/components/Home/FinalCTA';
 import { FAQSection } from "@/src/components/FAQSection";
+import GlobalEdgeNetwork from "@/src/components/About/GlobalEdge";
+
 
 export const SERVICES_FAQS = [
   {
@@ -38,6 +40,7 @@ export default function EngineeringPage() {
     <main className="min-h-screen bg-[#FAFAFA]">
       <KineticCapabilities />
       <SolutionsMatrix />
+      <GlobalEdgeNetwork />
       <ExecutionTrack />
       <KineticTimeline />
       <FAQSection

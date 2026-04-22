@@ -47,7 +47,7 @@ export function ExecutionTrack() {
     }, { scope: container });
   
     return (
-      <section ref={container} className="w-full bg-[#FAFAFA] py-24 md:py-32 font-sans border-t border-slate-200">
+      <section ref={container} className="w-full bg-white py-24 md:py-32 font-sans border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">

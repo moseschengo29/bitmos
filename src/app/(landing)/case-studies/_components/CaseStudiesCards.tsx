@@ -60,7 +60,7 @@ export default function CaseStudyCards() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative z-10 py-24 lg:py-32 bg-[#FAFAFA] border-y border-slate-200 overflow-hidden">
+    <section ref={container} className="relative z-10 py-24 lg:py-32 bg-white border-y border-slate-200 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">

@@ -12,22 +12,22 @@ export default function ContactTopBar() {
           
           {/* Email Link */}
           <a 
-            href="mailto:info@bitmos.com" 
+            href="mailto:info@bitmostechnologies.com" 
             className="flex items-center gap-2 text-white hover:text-amber-400 transition-colors duration-200 group"
           >
             <Mail className="h-3.5 w-3.5 text-slate-400 group-hover:text-amber-400 transition-colors" /> 
-            info@bitmos.com
+            info@bitmostechnologies.com
           </a>
           
           <div className="w-px h-3 bg-slate-700"></div>
           
           {/* Phone Link */}
           <a 
-            href="tel:+254200000000" 
+            href="tel:+254702357053" 
             className="flex items-center gap-2 text-white hover:text-amber-400 transition-colors duration-200 group"
           >
             <Phone className="h-3.5 w-3.5 text-slate-400 group-hover:text-amber-400 transition-colors" /> 
-            +254 (0) 00000000
+            +254 702 357 053
           </a>
           
           <div className="w-px h-3 bg-slate-700"></div>
@@ -35,7 +35,7 @@ export default function ContactTopBar() {
           {/* Location (Non-link, neutral text) */}
           <span className="flex items-center gap-2 text-white">
             <MapPin className="h-3.5 w-3.5 text-slate-400" /> 
-            Nairobi, HQ
+            CPA Centre, Ground Floor, Thika Road, Nairobi, Kenya
           </span>
 
         </div>

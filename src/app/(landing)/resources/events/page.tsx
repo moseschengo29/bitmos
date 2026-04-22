@@ -175,10 +175,10 @@ export default function EventsPage() {
     <main ref={container} className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-blue-600 selection:text-white">
       
 
-      <div className="w-full border-b border-slate-200 bg-white overflow-hidden py-4 pt-24 md:pt-32">
+      <div className="w-full border-b border-slate-200 bg-white overflow-hidden py-4 ">
         <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex items-center gap-8 px-8 text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">
+            <div key={i} className="flex items-center gap-8 px-8 text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 p-0">
               <span className="flex items-center gap-2"><Radio className="h-3 w-3 text-blue-600" /> LIVE BROADCASTS</span>
               <span>--</span>
               <span>Nairobi</span>
@@ -213,13 +213,13 @@ export default function EventsPage() {
                 onClick={() => setViewMode("list")}
                 className={`flex items-center gap-2 px-6 py-3 text-[10px] font-bold tracking-widest uppercase transition-all duration-300 rounded-sm ${viewMode === "list" ? "bg-slate-900 text-white shadow-md" : "text-slate-500 hover:text-slate-900"}`}
               >
-                <List className="h-4 w-4" /> Ledger
+                <List className="h-4 w-4" /> List
               </button>
               <button 
                 onClick={() => setViewMode("calendar")}
                 className={`flex items-center gap-2 px-6 py-3 text-[10px] font-bold tracking-widest uppercase transition-all duration-300 rounded-sm ${viewMode === "calendar" ? "bg-slate-900 text-white shadow-md" : "text-slate-500 hover:text-slate-900"}`}
               >
-                <LayoutGrid className="h-4 w-4" /> Matrix
+                <LayoutGrid className="h-4 w-4" /> Calender
               </button>
             </div>
           </div>

@@ -46,9 +46,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function KineticCapabilities() {
   const container = useRef<HTMLElement>(null);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  
+  // 1. Set the initial state to 0 so the first item is open by default
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // 2. Add a ref to track the initial render
+  const isInitialMount = useRef(true);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -64,6 +68,12 @@ export function KineticCapabilities() {
 
   // Auto-scroll to center the active item
   useEffect(() => {
+    // 3. Prevent auto-scrolling on the very first page load
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
     if (activeIndex !== null && rowRefs.current[activeIndex]) {
       rowRefs.current[activeIndex]?.scrollIntoView({
         behavior: "smooth",
@@ -100,7 +110,6 @@ export function KineticCapabilities() {
               key={item.id}
               ref={(el) => { rowRefs.current[index] = el; }}
               className="kin-row border-b border-slate-200 overflow-hidden cursor-pointer"
-              // ONLY expand or collapse on explicit click
               onClick={() => setActiveIndex(isActive ? null : index)}
               animate={{
                 backgroundColor: isActive ? "#121c34" : "#FAFAFA", 

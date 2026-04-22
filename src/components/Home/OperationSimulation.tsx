@@ -116,7 +116,7 @@ export default function TechArchitectureFlow() {
   }, { dependencies: [metrics], scope: container });
 
   return (
-    <section ref={container} className="w-full bg-[#FAFAFA] py-16 md:py-20 font-sans text-slate-900 px-4 sm:px-8 overflow-hidden">
+    <section ref={container} className="w-full bg-yellow-50 py-16 md:py-20 font-sans text-slate-900 px-4 sm:px-8 overflow-hidden">
       
       <div className="flex-shrink-0 mb-10 md:mb-12 flex flex-col items-center text-center">
         <div className="mb-4 md:mb-6 inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm">

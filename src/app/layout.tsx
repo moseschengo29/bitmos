@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/favicon-light.png",
-        href: "/favicon-light.png",
+        url: "/BitmosColored.png",
+        href: "/BitmosColored.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/favicon-dark.png",
-        href: "/favicon-dark.png",
+        url: "/BitmosWhite.png",
+        href: "/BitmosWhite.png",
       },
     ],
   },

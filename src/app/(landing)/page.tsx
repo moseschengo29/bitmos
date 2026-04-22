@@ -20,10 +20,10 @@ const BitmosLandingPage = () => {
         <Capabilities />
         <SolutionsMatrix />
         <TelemetryGrid />
-        <OperationsSimulator />
-        <MacbookFolderStack />
-        <TeamGrid />
         <HeroDynamicGrid />
+        <MacbookFolderStack />
+        <OperationsSimulator />
+        <TeamGrid />
         <InfoPage />
         <FinalCTA />
     </main>

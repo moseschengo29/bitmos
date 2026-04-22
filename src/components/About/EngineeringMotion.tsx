@@ -10,22 +10,22 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const PRINCIPLES = [
   {
-    id: "carbon",
+    id: "performance",
     icon: Zap,
-    title: "A Reduced Manufacturing\nCarbon footprint",
-    desc: "Our coating process operates at low temperature with high energy efficiency, keeping our manufacturing carbon footprint low while avoiding any persistent environmental pollutants."
+    title: "Zero Technical Debt\n& High Performance",
+    desc: "We do not compromise on code quality. Every system is built on modern, semantic frameworks and optimized at the edge to ensure lightning-fast execution and sustainable long-term scaling."
   },
   {
     id: "architecture",
     icon: Network,
-    title: "Zero-Latency\nGlobal Architecture",
-    desc: "We engineer systems using distributed edge networks, ensuring that data processing occurs infinitely closer to the end user, dramatically reducing round-trip latency."
+    title: "Cloud-Native\nGlobal Architecture",
+    desc: "We engineer systems utilizing distributed edge networks and containerized microservices, ensuring that data processing occurs instantly with near-zero latency and flawless reliability."
   },
   {
     id: "security",
     icon: ShieldCheck,
-    title: "Immutable Security\n& Data Integrity",
-    desc: "Implementing a strict zero-trust model, every internal microservice requires mutual TLS authentication, ensuring total data privacy and SOC2 compliance out of the box."
+    title: "Immutable Security\n& Zero-Trust Protocols",
+    desc: "Security is our foundation. We implement enterprise-grade encryption, strict mutual TLS authentication, and compliance-ready architectures to protect your mission-critical data out of the box."
   }
 ];
 
@@ -72,7 +72,7 @@ export default function RotatingPrinciples() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="bg-[#FAFAFA] py-12 text-slate-900 font-sans overflow-hidden">
+    <section ref={container} className="bg-[#0B1120] py-12 text-slate-200 font-sans overflow-hidden">
       
       {/* This div acts as the trigger and spacer for the pinned scroll */}
       <div ref={pinSpacer} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
@@ -92,7 +92,7 @@ export default function RotatingPrinciples() {
               rx="1000" // Extremely wide
               ry="350"  // Flattened height
               fill="none" 
-              stroke="#0f172a" 
+              stroke="#1e293b" 
               strokeWidth="0.75" 
               strokeDasharray="2 6" 
               opacity="0.3"
@@ -108,7 +108,7 @@ export default function RotatingPrinciples() {
                 cy="0" 
                 r="280" 
                 fill="none" 
-                stroke="#0f172a" 
+                stroke="#38bdf8" 
                 strokeWidth="0.75" 
                 strokeDasharray="2 6" 
                 opacity="0.4"
@@ -116,13 +116,13 @@ export default function RotatingPrinciples() {
 
               {/* The 4 Triangle Trackers sitting on the circle border */}
               {/* Top */}
-              <polygon points="-6,-280 6,-280 0,-270" fill="#0f172a" />
+              <polygon points="-6,-280 6,-280 0,-270" fill="#facc15" />
               {/* Bottom */}
-              <polygon points="-6,280 6,280 0,270" fill="#0f172a" />
+              <polygon points="-6,280 6,280 0,270" fill="#facc15" />
               {/* Left */}
-              <polygon points="-280,-6 -280,6 -270,0" fill="#0f172a" />
+              <polygon points="-280,-6 -280,6 -270,0" fill="#facc15" />
               {/* Right */}
-              <polygon points="280,-6 280,6 270,0" fill="#0f172a" />
+              <polygon points="280,-6 280,6 270,0" fill="#facc15" />
             
             </g>
           </g>
@@ -140,17 +140,17 @@ export default function RotatingPrinciples() {
                 className={`content-${index} absolute flex flex-col items-center justify-center w-full px-6 ${index !== 0 ? 'opacity-0' : 'opacity-100'}`}
               >
                 {/* Minimalist Icon */}
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-transparent text-slate-800">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-transparent text-[#38bdf8]">
                   <Icon className="h-5 w-5" strokeWidth={1.5} />
                 </div>
                 
                 {/* Elegant Heading (Handles line breaks if provided) */}
-                <h2 className="font-heading text-2xl sm:text-[28px] font-medium text-slate-900 leading-[1.2] mb-6 whitespace-pre-line">
+                <h2 className="font-heading text-2xl sm:text-[28px] font-medium text-white leading-[1.2] mb-6 whitespace-pre-line">
                   {principle.title}
                 </h2>
                 
                 {/* Muted Descriptive Text */}
-                <p className="text-[15px] text-slate-500 font-medium leading-[1.7]">
+                <p className="text-[15px] text-slate-400 font-medium leading-[1.7]">
                   {principle.desc}
                 </p>
               </div>
@@ -161,8 +161,8 @@ export default function RotatingPrinciples() {
 
         {/* Scroll prompt indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
-           <div className="w-px h-12 bg-gradient-to-b from-slate-900 to-transparent"></div>
-           <span className="text-[10px] font-bold uppercase tracking-widest text-slate-900 mt-3">Scroll</span>
+           <div className="w-px h-12 bg-slate-600"></div>
+           <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-3">Scroll</span>
         </div>
 
       </div>

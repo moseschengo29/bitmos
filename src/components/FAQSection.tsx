@@ -30,7 +30,7 @@ export function FAQSection({
   if (!faqs || faqs.length === 0) return null;
 
   return (
-    <section className="w-full bg-[#FAFAFA] text-slate-900 border-t border-b border-slate-200">
+    <section className="w-full bg-white text-slate-900 border-t border-b border-slate-200">
       <div className="flex flex-col md:flex-row w-full max-w-[1600px] mx-auto">
         
         <div className="w-full md:w-[40%] border-b md:border-b-0 md:border-r border-slate-200 p-8 md:p-16 lg:p-24 flex flex-col items-start justify-center relative">

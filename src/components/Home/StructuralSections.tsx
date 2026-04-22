@@ -55,7 +55,7 @@ export const PRINCIPLES = [
 
 export function ManifestoSection() {
   return (
-    <section className="w-full bg-[#FAFAFA] text-slate-900 border-b border-slate-200">
+    <section className="w-full bg-white text-slate-900 border-b border-slate-200">
       <div className="flex flex-col md:flex-row-reverse w-full max-w-[1600px] mx-auto">
         <div className="w-full md:w-[40%] border-b md:border-b-0 md:border-l border-slate-200 p-8 md:p-16 lg:p-24 flex flex-col items-start justify-center relative">
           <div className="md:sticky md:top-32">
@@ -72,7 +72,7 @@ export function ManifestoSection() {
           {PRINCIPLES.map((principle) => (
             <div 
               key={principle.id} 
-              className="group border-b border-slate-200 last:border-b-0 relative overflow-hidden cursor-pointer bg-[#FAFAFA] hover:bg-slate-900 transition-colors duration-500 ease-out"
+              className="group border-b border-slate-200 last:border-b-0 relative overflow-hidden cursor-pointer bg-white hover:bg-slate-900 transition-colors duration-500 ease-out"
             >
               <div className="flex flex-col md:flex-row md:items-center p-8 md:p-12 lg:px-16 lg:py-16 relative z-10">
                 
@@ -115,7 +115,7 @@ export function ManifestoSection() {
 
 export default function InfoPage() {
   return (
-    <div className="min-h-screen bg-[#FAFAFA] py-24">
+    <div className="min-h-screen bg-white py-24">
       <FAQSection 
         faqs={HOME_FAQS} 
         subtitle="General FAQ"

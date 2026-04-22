@@ -195,78 +195,79 @@ export default function SectorsPage() {
         </div>
       </div>
 
-      <section className="bg-white border-t border-slate-200 py-24 md:py-40">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-          
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
-            {/* Sticky Context */}
-            <div className="lg:w-1/3">
-              <div className="lg:sticky lg:top-32">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-6 block">
-                  Engineering Philosophy
-                </span>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[1.1] mb-8">
-                  Different sectors. <br />
-                  <span className="text-slate-900">Same physics.</span>
-                </h2>
-                <p className="text-lg text-slate-500 font-medium leading-relaxed">
-                  While business logic varies by vertical, the requirements for high-availability, 
-                  deterministic scaling, and zero-trust security are universal. We apply 
-                  battle-tested architectural patterns across every domain we enter.
-                </p>
-              </div>
-            </div>
-
-            {/* Vertical Features List */}
-            <div className="lg:w-2/3 border-l border-slate-100 pl-8 lg:pl-16 space-y-20">
-              
-              {/* Feature 01 */}
-              <div className="group">
-                <span className="block text-[10px] font-mono font-bold text-slate-300 mb-4 tracking-widest">
-                  [ STANDARDS_01 ]
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 group-hover:text-blue-600 transition-colors">
-                  Deterministic Data Integrity
-                </h3>
-                <p className="text-base md:text-lg text-slate-500 font-medium leading-relaxed max-w-2xl">
-                  Whether it is a financial transaction or a patient health record, data loss is not an option. 
-                  We utilize write-ahead logging and cryptographically verifiable ledgers to ensure absolute state consistency.
-                </p>
-              </div>
-
-              {/* Feature 02 */}
-              <div className="group">
-                <span className="block text-[10px] font-mono font-bold text-slate-300 mb-4 tracking-widest">
-                  [ STANDARDS_02 ]
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 group-hover:text-blue-600 transition-colors">
-                  Predictive Scalability
-                </h3>
-                <p className="text-base md:text-lg text-slate-500 font-medium leading-relaxed max-w-2xl">
-                  Our architectures are designed to handle 10x spikes in traffic without manual intervention. 
-                  We use containerized orchestration and automated horizontal scaling to maintain a flat latency curve.
-                </p>
-              </div>
-
-              {/* Feature 03 */}
-              <div className="group">
-                <span className="block text-[10px] font-mono font-bold text-slate-300 mb-4 tracking-widest">
-                  [ STANDARDS_03 ]
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 group-hover:text-blue-600 transition-colors">
-                  Edge-First Deployment
-                </h3>
-                <p className="text-base md:text-lg text-slate-500 font-medium leading-relaxed max-w-2xl">
-                  Sub-50ms response times globally. We push compute and caching to the edge, 
-                  ensuring that your users in London, Nairobi, or New York experience the 
-                  same instantaneous interaction speed.
-                </p>
-              </div>
-
+      <section className="bg-[#0B1120] border-t border-slate-800 py-24 md:py-40">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+          {/* Sticky Context */}
+          <div className="lg:w-1/3">
+            <div className="lg:sticky lg:top-32">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-400 mb-6 block">
+                Engineering Philosophy
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white leading-[1.1] mb-8">
+                Different sectors. <br />
+                <span className="text-white">Same physics.</span>
+              </h2>
+              <p className="text-lg text-slate-400 font-medium leading-relaxed">
+                While business logic varies by vertical, the requirements for high-availability, 
+                deterministic scaling, and zero-trust security are universal. We apply 
+                battle-tested architectural patterns across every domain we enter.
+              </p>
             </div>
           </div>
+
+          {/* Vertical Features List */}
+          {/* Changed border to slate-800 to match the dark theme */}
+          <div className="lg:w-2/3 border-l border-slate-800 pl-8 lg:pl-16 space-y-20">
+            
+            {/* Feature 01 */}
+            <div className="group cursor-default">
+              <span className="block text-[10px] font-mono font-bold text-yellow-400 mb-4 tracking-widest">
+                [ STANDARDS_01 ]
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                Deterministic Data Integrity
+              </h3>
+              <p className="text-base md:text-lg text-slate-400 font-medium leading-relaxed max-w-2xl">
+                Whether it is a financial transaction or a patient health record, data loss is not an option. 
+                We utilize write-ahead logging and cryptographically verifiable ledgers to ensure absolute state consistency.
+              </p>
+            </div>
+
+            {/* Feature 02 */}
+            <div className="group cursor-default">
+              <span className="block text-[10px] font-mono font-bold text-yellow-400 mb-4 tracking-widest">
+                [ STANDARDS_02 ]
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                Predictive Scalability
+              </h3>
+              <p className="text-base md:text-lg text-slate-400 font-medium leading-relaxed max-w-2xl">
+                Our architectures are designed to handle 10x spikes in traffic without manual intervention. 
+                We use containerized orchestration and automated horizontal scaling to maintain a flat latency curve.
+              </p>
+            </div>
+
+            {/* Feature 03 */}
+            <div className="group cursor-default">
+              <span className="block text-[10px] font-mono font-bold text-yellow-400 mb-4 tracking-widest">
+                [ STANDARDS_03 ]
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                Edge-First Deployment
+              </h3>
+              <p className="text-base md:text-lg text-slate-400 font-medium leading-relaxed max-w-2xl">
+                Sub-50ms response times globally. We push compute and caching to the edge, 
+                ensuring that your users in London, Nairobi, or New York experience the 
+                same instantaneous interaction speed.
+              </p>
+            </div>
+
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <EnterpriseCTA />
     </main>
