@@ -18,7 +18,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8 # Installs a stable version of pnpm
+          version: 9 # Installs a stable version of pnpm
 
       # 3. Setup Node.js and cache pnpm dependencies to speed up future builds
       - name: Setup Node.js
