@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -84,19 +85,21 @@ export default function AnchorTestimonial() {
         {/* --- AUTHOR GLASS PILL --- */}
         <div className="quote-reveal inline-flex items-center gap-4 rounded-full border border-[#0B1120]/10 bg-[#0B1120]/5 p-2 pr-6 shadow-sm backdrop-blur-md transition-all hover:bg-[#0B1120]/10 hover:shadow-md">
           {/* Avatar with glowing ring */}
-          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-yellow-500">
-            <div className="absolute inset-0 rounded-full border-2 border-[#0B1120]/20"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" 
-              alt="Sarah Jenkins" 
-              className="h-full w-full rounded-full object-cover grayscale-[20%]"
+          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-yellow-500 overflow-hidden">
+            <div className="absolute inset-0 rounded-full border-2 border-[#0B1120]/20 z-10 pointer-events-none"></div>
+            <Image 
+              src="/john-mwapahe.JPG" 
+              alt="John Mwapahe" 
+              fill
+              sizes="64px"
+              className="object-contain"
             />
           </div>
           
           <div className="text-left">
-            <p className="text-sm font-bold text-[#0B1120]">Sarah Jenkins</p>
+            <p className="text-sm font-bold text-[#0B1120]">John M. Lenga</p>
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#0B1120]/70 mt-0.5">
-              CTO, Nexus Systems
+              CEO, Jolen Digital Marketing Agency
             </p>
           </div>
         </div>
